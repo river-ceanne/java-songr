@@ -23,5 +23,7 @@ This repository is a starter exercise in creating a backend using Java with Spri
   Other routes to check out:
 
     <Code> http://localhost:8080/hello/{a string} </Code> 
+    <br>
     <Code> http://localhost:8080/capitalize/{a string} </Code> 
+    <br>
     <Code> http://localhost:8080/reverse?sentence={a string}</Code> 
