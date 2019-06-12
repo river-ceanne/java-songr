@@ -1,8 +1,6 @@
 package com.vencer401.firstWebApp;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldController {
@@ -15,5 +13,22 @@ public class HelloWorldController {
     @GetMapping("/hello/{name}")
     public String getHelloToMe(@PathVariable String name){
         return "Hello, " + name;
+    }
+
+    @GetMapping("/capitalize/{name}")
+    public String getCapitalization(@PathVariable String name){
+        return name.toUpperCase();
+    }
+
+    @RequestMapping(value="/reverse", method = RequestMethod.GET)
+    public @ResponseBody String getReverse(@RequestParam("sentence") String sentence){
+        StringBuilder reversed = new StringBuilder();
+        String[] split = sentence.split(" ");
+        for(int i = split.length - 1; i >= 0; i--){
+            reversed.append(split[i]);
+            reversed.append(" ");
+        }
+
+        return reversed.toString();
     }
 }
