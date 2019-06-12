@@ -26,7 +26,7 @@ public class HelloWorldController {
         String[] split = sentence.split(" ");
         for(int i = split.length - 1; i >= 0; i--){
             reversed.append(split[i]);
-            if(i < split.length - 2) reversed.append(" "); // insert space after word append but not last word
+            reversed.append(" ");
         }
 
         return reversed.toString();
