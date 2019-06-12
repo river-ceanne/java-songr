@@ -1,8 +1,6 @@
 package com.vencer401.firstWebApp;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldController {
@@ -22,12 +20,13 @@ public class HelloWorldController {
         return name.toUpperCase();
     }
 
-    @GetMapping("/reverse?sentence={sentence}")
-    public String getReverse(@PathVariable String sentence){
+    @RequestMapping(value="/reverse", method = RequestMethod.GET)
+    public @ResponseBody String getReverse(@RequestParam("sentence") String sentence){
         StringBuilder reversed = new StringBuilder();
         String[] split = sentence.split(" ");
-        for(int i = split.length - 1; i <= split.length; i--){
+        for(int i = split.length - 1; i >= 0; i--){
             reversed.append(split[i]);
+            if(i < split.length - 2) reversed.append(" "); // insert space after word append but not last word
         }
 
         return reversed.toString();
