@@ -19,4 +19,9 @@ public class AlbumController {
         return "allAlbums";
     }
 
+    @GetMapping("/addAlbum")
+    public String addAlbums() {
+        return "addAlbum";
+    }
+
 }

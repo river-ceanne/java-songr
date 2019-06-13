@@ -5,7 +5,14 @@
     <title>Albums</title>
 </head>
 <body>
+
+<header>
     <h1>Albums</h1>
+</header>
+
+<!--<form id = "addAlbumForm" th:action = "@{/addAlbum}"  method="post">-->
+<!--        <input type="button" value="Add an Album" class="add-album-button" />-->
+<!--</form>-->
 
     <ul>
         <li th:each="album : ${albums}">

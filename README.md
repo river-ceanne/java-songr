@@ -1,15 +1,23 @@
-# Lab 11 - Building Full-Stack Web Apps
+# Building Full-Stack Web Apps
 
 This repository is a starter exercise in creating a backend using Java with Spring. 
 
-## Class / @RestController
+## Classes / @RestController / @Controller
 - HelloWorldController.java
+- NotARestController.java
+- Album.java
+- AlbumController.java
+- AlbumRespository.java
 
 ## API
-* getHelloWorld()
-* getHelloToMe(String name)
-* getCapitalization(String string)
-* getReverse(String sentence)
+#### HelloWorldController
+    getHelloWorld()
+    getHelloToMe(String name)
+    getCapitalization(String string)
+    getReverse(String sentence)
+
+#### AlbumController
+    getAllAlbums(Model m)
 
 ## Starter Guide:
 - Clone down the repo and run the command:
@@ -27,3 +35,5 @@ This repository is a starter exercise in creating a backend using Java with Spri
     <Code> http://localhost:8080/capitalize/{a string} </Code> 
     <br>
     <Code> http://localhost:8080/reverse?sentence={a string}</Code> 
+    <br>
+    <Code> http://localhost:8080/albums</Code> 
