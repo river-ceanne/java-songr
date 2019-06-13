@@ -15,7 +15,7 @@ public class AlbumController {
     public String getAllGreetings(Model m) {
         Iterable<Album> albums = albumRepository.findAll();
         m.addAttribute("albums", albums);
-        return "allGreetings";
+        return "allAlbums";
     }
 
 }
