@@ -12,8 +12,8 @@ public class AlbumController {
     AlbumRepository albumRepository;
 
     @GetMapping("/albums")
-    public String getAllGreetings(Model m) {
-        Iterable<Album> albums = albumRepository.findAll();
+    public String getAllAlbums(Model m) {
+        Iterable albums = albumRepository.findAll();
         m.addAttribute("albums", albums);
         return "allAlbums";
     }
