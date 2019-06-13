@@ -47,3 +47,5 @@ On your application.properties, make sure postgres is set up on with your indivi
     <Code> http://localhost:8080/reverse?sentence={a string}</Code> 
     <br>
     <Code> http://localhost:8080/albums</Code> 
+    <br>
+    <Code> http://localhost:8080/albums/add</Code> 
