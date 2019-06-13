@@ -16,11 +16,11 @@
 
     <ul>
         <li th:each="album : ${albums}">
-            <span th:text="${album.title}"></span>
-            <span th:text="${album.artist}"></span>
-            <img th:src="@{${album.imageUrl}}" />
-            <span th:text="${album.songCount}"></span>
-            <span th:text="${album.length}"></span>
+            <img th:src="@{${album.imageUrl}}" th:width="300"/>
+            <p>Album Title: <span th:text="${album.title}"></span></p>
+            <p>Artist: <span th:text="${album.artist}"></span></p>
+            <p><span th:text="${album.songCount}"></span></p>
+            <p><span th:text="${album.length}"></span></p>
         </li>
     </ul>
 
