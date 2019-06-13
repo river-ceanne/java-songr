@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-//@EntityScan(basePackages = "com.vencer401.firstWebApp")
 public class AlbumController {
 
     @Autowired
