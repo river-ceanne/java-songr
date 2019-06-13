@@ -24,6 +24,16 @@ This repository is a starter exercise in creating a backend using Java with Spri
 
   <Code> ./gradlew bootrun </Code>
 
+#### Application Properties Set-up:
+
+On your application.properties, make sure postgres is set up on with your individual user environment variables
+
+    spring.datasource.url=jdbc:postgresql://localhost:5432/songr
+    spring.datasource.username=${postgresUsername}
+    spring.datasource.password=${postgresPassword}
+    #spring.jpa.hibernate.ddl-auto=create //<-- uncomment on first run of application to create table once
+    spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true        
+
 - On your browser, the root port is 8080. -- this should output a 'Hello World' on your browser display.
 
   <Code> http://localhost:8080 </Code> 
