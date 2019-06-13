@@ -29,10 +29,10 @@ public class AlbumController {
 
     @PostMapping("/albums")
     public RedirectView addGreeting(@RequestParam String title, @RequestParam String artist,
-                                    @RequestParam String imageUrl, @RequestParam int length ,@RequestParam int songCount) {
+                                    @RequestParam String imageUrl, @RequestParam String length ,@RequestParam String songCount) {
         Album album;
         try{
-            album = new Album(title,artist,songCount,length,imageUrl);
+            album = new Album(title,artist,Integer.parseInt(songCount),Integer.parseInt(length),imageUrl);
         }catch(NumberFormatException e){
             e.printStackTrace();
         return new RedirectView("/albums");
