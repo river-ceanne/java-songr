@@ -34,11 +34,18 @@ public class AlbumController {
     }
 
     @PostMapping("/songs")
-    public RedirectView addSongToAlbum(@RequestParam String title,@RequestParam int length,
-                                       @RequestParam int trackNumber ,@RequestParam String album) {
+    public RedirectView addSongToAlbum(@RequestParam String title,@RequestParam String length,
+                                       @RequestParam String trackNumber ,@RequestParam String album) {
         List<Album> albumWithThatTitle = albumRepository.findByTitle(album);
+        Song song;
+
         if(albumWithThatTitle.size() > 0) {
-            Song song = new Song(title,length,trackNumber, albumWithThatTitle.get(0));
+            try{
+                song = new Song(title,Integer.parseInt(length),Integer.parseInt(trackNumber), albumWithThatTitle.get(0));
+            }catch(NumberFormatException e){
+                e.printStackTrace();
+                return new RedirectView("/songs");
+            }
             songRepository.save(song);
         }
 
