@@ -31,5 +31,20 @@ public class Song {
         this.album = album;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getTrackNumber() {
+        return trackNumber;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
 }
 
