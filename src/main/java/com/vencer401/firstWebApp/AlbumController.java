@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
@@ -42,6 +43,18 @@ public class AlbumController {
         }
 
         return new RedirectView("/songs");
+    }
+
+    @GetMapping("/album/{title}")
+    public String getAlbum(Model m, @PathVariable String title){
+        List<Album> albumWithThatTitle = albumRepository.findByTitle(title);
+        if(albumWithThatTitle.size() > 0) {
+            List<Song> songs = albumWithThatTitle.get(0).getSongs();
+            m.addAttribute("album",albumWithThatTitle.get(0));
+            m.addAttribute("songs",songs);
+        }
+
+        return "album";
     }
 
     @GetMapping("/albums")

@@ -52,4 +52,8 @@ public class Album {
     public String getImageUrl() {
         return imageUrl;
     }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
 }
