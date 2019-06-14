@@ -8,16 +8,25 @@ This repository is a starter exercise in creating a backend using Java with Spri
 - Album.java
 - AlbumController.java
 - AlbumRespository.java
+- Song.java
+- SongRepository.java
 
 ## API
-#### HelloWorldController
+##### HelloWorldController
     getHelloWorld()
     getHelloToMe(String name)
     getCapitalization(String string)
     getReverse(String sentence)
 
-#### AlbumController
+##### AlbumController
     getAllAlbums(Model m)
+    getAllSongs(Model m)
+    getAlbum(...)
+    addSongToAlbum(...)
+    addAlbum(...)
+    addSongsForm()
+    addAlbumsForm()
+    
 
 ## Starter Guide:
 - Clone down the repo and run the command:
@@ -40,12 +49,18 @@ On your application.properties, make sure postgres is set up on with your indivi
 
   Other routes to check out:
 
-    <Code> http://localhost:8080/hello/{a string} </Code> 
-    <br>
-    <Code> http://localhost:8080/capitalize/{a string} </Code> 
-    <br>
-    <Code> http://localhost:8080/reverse?sentence={a string}</Code> 
-    <br>
-    <Code> http://localhost:8080/albums</Code> 
-    <br>
-    <Code> http://localhost:8080/albums/add</Code> 
+    http://localhost:8080/hello/{a string}
+   
+   http://localhost:8080/capitalize/{a string} 
+   
+   http://localhost:8080/reverse?sentence={a string}
+   
+   http://localhost:8080/albums
+   
+   http://localhost:8080/albums/add
+   
+   http://localhost:8080/album/{title}
+   
+   http://localhost:8080/songs
+   
+   http://localhost:8080/songs/add

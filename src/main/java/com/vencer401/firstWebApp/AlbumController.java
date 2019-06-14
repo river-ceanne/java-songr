@@ -29,7 +29,7 @@ public class AlbumController {
     }
 
     @GetMapping("/songs/add")
-    public String addSongs() {
+    public String addSongsForm() {
         return "addSongToAlbum";
     }
 
@@ -65,12 +65,12 @@ public class AlbumController {
     }
 
     @GetMapping("/albums/add")
-    public String addAlbums() {
+    public String addAlbumsForm() {
         return "addAlbum";
     }
 
     @PostMapping("/albums")
-    public RedirectView addGreeting(@RequestParam String title, @RequestParam String artist,
+    public RedirectView addAlbum(@RequestParam String title, @RequestParam String artist,
                                     @RequestParam String imageUrl, @RequestParam String length ,@RequestParam String songCount) {
         Album album;
         try{
