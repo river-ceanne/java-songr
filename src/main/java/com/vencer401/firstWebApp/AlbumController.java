@@ -47,14 +47,16 @@ public class AlbumController {
 
     @GetMapping("/album/{title}")
     public String getAlbum(Model m, @PathVariable String title){
+
         List<Album> albumWithThatTitle = albumRepository.findByTitle(title);
         if(albumWithThatTitle.size() > 0) {
             List<Song> songs = albumWithThatTitle.get(0).getSongs();
             m.addAttribute("album",albumWithThatTitle.get(0));
             m.addAttribute("songs",songs);
+            return "album";
         }
 
-        return "album";
+        return getAllAlbums(m);
     }
 
     @GetMapping("/albums")
