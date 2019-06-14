@@ -27,6 +27,11 @@ public class AlbumController {
         return "allSongs";
     }
 
+    @GetMapping("/songs/add")
+    public String addSongs() {
+        return "addSongToAlbum";
+    }
+
     @PostMapping("/songs")
     public RedirectView addSongToAlbum(@RequestParam String title,@RequestParam int length,
                                        @RequestParam int trackNumber ,@RequestParam String album) {
