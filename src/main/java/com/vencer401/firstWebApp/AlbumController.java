@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
+
 @Controller
 public class AlbumController {
 
@@ -23,6 +25,18 @@ public class AlbumController {
         Iterable<Song> songs = songRepository.findAll();
         m.addAttribute("songs", songs);
         return "allSongs";
+    }
+
+    @PostMapping("/songs")
+    public RedirectView addSongToAlbum(@RequestParam String title,@RequestParam int length,
+                                       @RequestParam int trackNumber ,@RequestParam String album) {
+        List<Album> albumWithThatTitle = albumRepository.findByTitle(album);
+        if(albumWithThatTitle.size() > 0) {
+            Song song = new Song(title,length,trackNumber, albumWithThatTitle.get(0));
+            songRepository.save(song);
+        }
+
+        return new RedirectView("/songs");
     }
 
     @GetMapping("/albums")
