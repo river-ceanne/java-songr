@@ -1,9 +1,6 @@
 package com.vencer401.firstWebApp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Song {
@@ -21,6 +18,8 @@ public class Song {
     String title;
     int length;
     int trackNumber;
+
+    @ManyToOne
     Album album;
 
     public Song(){}
